@@ -1,25 +1,22 @@
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import "./App.css";
+import Blog from "./posts.json";
+import Post from "./components/Post";
+import Posts from "./components/Posts";
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
-}
+
+    const [post, setPost] = React.useState(Blog[0])
+    const selectPost = (selected) => {
+      setPost(selected)
+    }
+    return (
+      <div className="App">
+        <h1>My Blog</h1>
+        <Posts posts={Blog} select={selectPost}/>
+        <Post post={post}/>
+      </div>
+    );
+  }
 
 export default App;

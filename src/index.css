@@ -11,3 +11,43 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+/** STYLING **/
+
+.App {
+  display: grid;
+  grid-template-areas:
+  "title title title title"
+  "posts post post post"
+  "posts post post post"
+  "posts post post post";
+  width: 90%;
+  margin: 10px auto;
+}
+
+.App > h1 {
+  grid-area: title;
+  background-color: navy;
+  color: white;
+  padding: 5px;
+  margin: 10px auto;
+  width: 100%;
+}
+
+.posts {
+  grid-area: posts;
+  border: 2px solid navy;
+  padding: 5px;
+}
+
+.post > div {
+  background-color: crimson;
+  color: white;
+  padding: 5px;
+  margin: 2px;
+}
+
+.post {
+  grid-area: post;
+  padding: 10px;
+}
